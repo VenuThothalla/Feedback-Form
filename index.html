@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Abhyaz Feedback Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      form-container {
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        width: 100%;
+        margin-top: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: #fff;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      #thankyou-message {
+        display: none;
+        color: #4caf50;
+        font-weight: bold;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Abhyaz Feedback Form</h1>
+
+      <form id="feedback-form" action="#" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" name="mobile" required />
+
+        <label for="role">Your Role:</label>
+        <select id="role" name="role" required>
+          <option value="student">Student</option>
+          <option value="faculty">Faculty</option>
+          <option value="staff">Staff</option>
+          <!-- Add more roles if needed -->
+        </select>
+
+        <label for="college">College:</label>
+        <input type="text" id="college" name="college" required />
+
+        <label for="feedback">Feedback:</label>
+        <textarea id="feedback" name="feedback" required></textarea>
+
+        <input type="submit" value="Submit" />
+      </form>
+
+      <div id="thankyou-message">Thank you for your feedback!</div>
+    </div>
+
+    <script>
+      document
+        .getElementById("feedback-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          document.getElementById("thankyou-message").style.display = "block";
+          document.getElementById("feedback-form").style.display = "none";
+        });
+    </script>
+  </body>
+</html>
